@@ -1,2 +1,0 @@
-# execpgm
-EXECPGM - mainframe shareables
