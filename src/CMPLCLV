@@ -1,0 +1,86 @@
+/* Rexx */
+trace off
+
+/* Fill InpRec1. and InpRec2. */
+Call ReadInput
+
+/* InpRec1: listvtoc entries */
+/* InpRec2: listcat entries */
+
+/* Fill lcentries. */
+Drop lcentries.
+Do N = 1 To InpRec2.0
+  If Words(InpRec2.N) > 2
+  Then Do
+      entryname = Word(InpRec2.N,2)
+      lcentries.entryname = 1
+    End /* Then */
+  Else Do
+      NOP /* Skip this uninteresting line */
+    End
+End /* Do */
+
+
+/* Compare old file with new and write output */
+Drop OutRec1.
+OutRec1.0 = 0
+Do N = 1 To InpRec1.0
+  entryname = Word(InpRec1.N,1)
+  If lcentries.entryname = 1
+    Then Do
+        NOP /* This entry exists in both, that's ok */
+        /* Say 'To be skipped : ' entryname */
+      End
+    Else Do /* Write this line, this entry has to be processed */
+        help = OutRec1.0 + 1
+        OutRec1.help = Strip(InpRec1.N)
+        OutRec1.0 = help
+      End
+End /* Do */
+
+Call WriteOutput
+
+Exit
+
+
+/*******************************************************************/
+/* Routines ********************************************************/
+/*******************************************************************/
+
+/*******************************************************************/
+ReadInput:
+
+Address Tso
+
+'EXECIO * DISKR LISTVTOC (Stem InpRec1. Finis'
+If RC <> 0
+Then Do
+    Say 'Error reading input file LISTVTOC, Rc = ' RC
+    Exit 69
+  End
+
+'EXECIO * DISKR LISTCAT (Stem InpRec2. Finis'
+If RC <> 0
+Then Do
+    Say 'Error reading input file LISTCAT, Rc = ' RC
+    Exit 69
+  End
+
+Return /* ReadInput */
+
+/*******************************************************************/
+WriteOutput:
+
+Address Tso
+
+'EXECIO * DISKW OUTLIST (Stem OutRec1. Finis'
+If RC <> 0
+Then Do
+    Say 'Error writing output file OUTLIST, Rc = ' RC
+    Exit 69
+  End
+
+Return /* WriteOutput */
+
+
+

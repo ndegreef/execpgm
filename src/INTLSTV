@@ -1,0 +1,61 @@
+/* Rexx */
+
+/* Interpret LISTVTOC DUMP output, search dataset names */
+
+Call ReadInput
+/* Fill InpRec. */
+
+Drop dslist.
+dslist.0 = 0
+/* list to contain all dataset names */
+
+stop = 0; N = 1
+Do While (N < InpRec.0) & (stop = 0)
+  If (Pos('--DATA SET NAME--',InpRec.N) <> 0)
+  Then Do /* that is the indication for next line is dataset name */
+      N = N + 1
+      help = dslist.0 + 1
+      Parse Var InpRec.N entry volume . . . . . dsorg .
+      dslist.help = ' 'entry'      'volume'  'dsorg
+      dslist.0 = help
+    End
+  Else Do
+      N = N + 1
+    End
+End /* While */
+
+Call WriteOutput
+
+Exit 0
+/*******************************************************************/
+/* Routines ********************************************************/
+/*******************************************************************/
+
+/*******************************************************************/
+ReadInput:
+
+Address Tso
+
+'EXECIO * DISKR INPUT1 (Stem InpRec. Finis'
+If RC <> 0
+Then Do
+    Say 'Error reading input file INPUT1, Rc = ' RC
+    Exit 69
+  End
+
+Return /* ReadInput */
+/*******************************************************************/
+WriteOutput:
+
+Address Tso
+
+'EXECIO * DISKW OUTPUT1 (Stem dslist. Finis'
+If RC <> 0
+Then Do
+    Say 'Error writing output file OUTPUT1, Rc = ' RC
+    Exit 69
+  End
+
+Return /* WriteOutput */
+
+
