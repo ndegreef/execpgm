@@ -1,6 +1,0 @@
-//GREEFNI5  JOB AUT20,GREEFNI,NOTIFY=GREEFNI,MSGLEVEL=(1,1),            00010000
-//       SYSTEM=SON5,CLASS=M                                            00020000
-//RUN       EXEC PGM=COBPROG <- PROGRAM TO RUN                          00070000
-//* PROGRAM WAS PUT IN HERE                                             00070100
-//STEPLIB  DD DISP=SHR,DSN=GREEFNI.LOADLIB                              00071000
-//SYSPRINT DD SYSOUT=*                                                  00080000
