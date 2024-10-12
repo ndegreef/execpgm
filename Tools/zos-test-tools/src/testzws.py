@@ -5,7 +5,7 @@ print("tested")
 
 print("hello") 
 
-host = "https://xiws.zos.rabobank.nl:1603"
+host = "https://xiws.zos.yourco.nl:1603"
 baseapiurl = "/twsz" 
 getrequest = "/v1/SJXT/engine/info"
 api_url = host + baseapiurl + getrequest
@@ -15,8 +15,8 @@ request_headers = {
     'Content-Type': 'application/json'
 }
 
-cert_file_path = "/u/greefdn/pythonprograms/dwc-client-ssl-xat.crt"
-key_file_path = "/u/greefdn/pythonprograms/dwc-client-ssl-xat.privkey"
+cert_file_path = "/u/greefn/pythonprograms/dwc-client-ssl-xat.crt"
+key_file_path = "/u/greefn/pythonprograms/dwc-client-ssl-xat.privkey"
 cert = (cert_file_path, key_file_path)
 # data = {'api_dev_key':API_KEY,
 #        'api_option':'paste',
@@ -94,13 +94,12 @@ data = """{
 }"""
 
 
-#response = requests.post(api_url, data = data, auth=('GREEFDN', '6LO2PZQ5'), verify=False) cert=cert
-
+#response = requests.post(api_url, data = data, auth=('GREEFN', 'password'), verify=False) cert=cert
 
 
 
 try:
-    #response = requests.get(api_url, auth=('GREEFDN', 'YW521EAX'), verify=False, headers=request_headers)
+    #response = requests.get(api_url, auth=('GREEFN', 'password'), verify=False, headers=request_headers)
     response = requests.get(api_url, cert=cert, verify=False, headers=request_headers)
 
 except requests.exceptions.RequestException as e:
