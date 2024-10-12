@@ -1,0 +1,3 @@
+...jobcard
+//EXECCMD EXEC PGM=IEFBR14                                      
+// COMMAND 'D A,L' 

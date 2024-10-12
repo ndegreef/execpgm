@@ -1,0 +1,3 @@
+.* -
+*.py binary binary
+*.sh ISO8859-1 EBCDIC

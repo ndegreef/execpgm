@@ -1,0 +1,22 @@
+export _CC_CLIB_PREFIX=SYS1
+export PATH=/usr/local/python/Python-3.8/bin:$PATH
+export LIBPATH=/usr/local/python/Python-3.8/lib:$LIBPATH
+export _BPXK_AUTOCVT=ON
+export _CEE_RUNOPTS='FILETAG(AUTOCVT,AUTOTAG) POSIX(ON)'
+export _TAG_REDIR_ERR=txt
+export _TAG_REDIR_IN=txt
+export _TAG_REDIR_OUT=txt
+export ZOAU_HOME=/usr/local/zoau
+export PATH=${ZOAU_HOME}/bin:$PATH
+export LIBPATH=${ZOAU_HOME}/lib:${LIBPATH}
+export MANPATH=${ZOAU_HOME}/docs/%L:${MANPATH}
+export sysexec=GREEFDN.A.EXEC
+export CLASSPATH=/usr/lpp/mqm/V9R2M0/java/lib/com.ibm.mq.jar:/usr/lpp/mqm/V9R2M0/java/lib/com.ibm.mq.jmqi.jar:./zosappllog.jar:/usr/lpp/mqm/V9R2M0/java/lib/com.ibm.mq.allclient.jar:$CLASSPATH
+export MQ_JAVA_DATA_PATH=/u/greefdn
+export MQ_JAVA_INSTALL_PATH=/usr/lpp/mqm/V9R2M0/java/lib
+export MQ_JAVA_LIB_PATH=/usr/lpp/mqm/V9R2M0/java/lib
+export PATH=$JAVA_HOME/bin:$PATH:/usr/lpp/mqm/V9R2M0/java/bin
+export LIBPATH=/usr/lpp/mqm/V9R2M0/java/lib:$LIBPATH
+export STEPLIB=SYS3.SCSQAUTH:SYS3.SCSQANLE:$STEPLIB
+export OPENJ9_JAVA_OPTIONS=-Djava.library.path=/usr/lpp/mqm/V9R2M0/java/lib
+echo 'hello here'
