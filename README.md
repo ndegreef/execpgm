@@ -1,5 +1,5 @@
 # execpgm
-EXECPGM.org assets - mainframe shareables
+EXECPGM.org assets - IBM mainframe / z/OS shareables
 
 See also [EXECPGM.org](https://execpgm.org)
 
