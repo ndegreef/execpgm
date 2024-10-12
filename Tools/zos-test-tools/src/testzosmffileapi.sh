@@ -1,1 +1,1 @@
-python3 testzosmffileapi.py /u/greefdn/pythonprograms/dwc-client-ssl-xat.crt /u/greefdn/pythonprograms/dwc-client-ssl-xat.privkey
+python3 testzosmffileapi.py /u/greefn/pythonprograms/dwc-client-ssl-xat.crt /u/greefn/pythonprograms/dwc-client-ssl-xat.privkey

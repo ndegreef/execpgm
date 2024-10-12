@@ -4,7 +4,7 @@ Gathering some general tools here.
 # Getting Started
 The tools are distributed automatically to the XAT system.
 Currently the go to
-/u/greefdn/gis-testtools
+/u/greefn/zos-testtools
 
 # Build and Test
 The pipeline triggered by a push builds, deploys to XAT and performas some tests
