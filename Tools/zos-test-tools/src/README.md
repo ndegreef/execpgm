@@ -1,6 +1,6 @@
 # Index
 
-As per good habit the $INDEX file contains an inventory of the things in here
+The good habit of the $INDEX file is in git replaced by the (this) README.md and contains an inventory of the things in here
 
 **.profile (sample)** - a sample for your z/OS Unix .profile containing a.o.
 - python
